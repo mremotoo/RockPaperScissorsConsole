@@ -46,16 +46,40 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    let playerSelection;
+    let computerSelection;
+    let gameRound;
     for (let i = 0; i < 5; i++) {
-        const playerSelection = getPlayerChoice();
-        let computerSelection;
+        playerSelection = getPlayerChoice();
         if (playerSelection != "") {
             computerSelection = getComputerChoice();
+            gameRound = playRound(playerSelection, computerSelection);
         } else {
             console.log("No choice selected.")
         }
-        console.log(playRound(playerSelection, computerSelection));
-    }
+        
+        if (!gameRound.includes("Draw")) {
+            if (gameRound.includes("Win")) {
+                playerScore++;
+                console.log(gameRound);
+                console.log("Your Score:", playerScore);
+                console.log("Computer Score:", computerScore);
+            }
+            if (gameRound.includes("Lose")) {
+                computerScore++;
+                console.log(gameRound);
+                console.log("Your Score:", playerScore);
+                console.log("Computer Score:", computerScore);
+            }
+        } else {
+            console.log(gameRound);
+            console.log("Your Score:", playerScore);
+            console.log("Computer Score:", computerScore);
+        }
+
+    }    
 }
 
 game();
