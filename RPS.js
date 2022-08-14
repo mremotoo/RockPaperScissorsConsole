@@ -3,6 +3,10 @@ function getComputerChoice() {
     return( choices[Math.floor(Math.random() * choices.length)])
 }
 
+function getPlayerChoice() {
+    
+}
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === playerSelection && computerSelection === "Paper") {
         return("Computer chose Paper. You Lose!")
@@ -15,6 +19,13 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// function game() {
+        
+// }
+
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
+const gameRound = playRound(playerSelection, computerSelection);
 console.log(playRound(playerSelection, computerSelection));
+
+// game();
