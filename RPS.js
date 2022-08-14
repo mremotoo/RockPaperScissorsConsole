@@ -46,15 +46,16 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    const playerSelection = getPlayerChoice();
-    let computerSelection;
-    if (playerSelection != "") {
-        computerSelection = getComputerChoice();
-    } else {
-        console.log("No choice selected.")
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = getPlayerChoice();
+        let computerSelection;
+        if (playerSelection != "") {
+            computerSelection = getComputerChoice();
+        } else {
+            console.log("No choice selected.")
+        }
+        console.log(playRound(playerSelection, computerSelection));
     }
-    console.log(playRound(playerSelection, computerSelection));
-
 }
 
 game();
