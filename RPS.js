@@ -78,8 +78,17 @@ function game() {
             console.log("Your Score:", playerScore);
             console.log("Computer Score:", computerScore);
         }
-
     }    
+    if (playerScore != computerScore) {
+        if (playerScore > computerScore) {
+            console.log("You Win!")
+        }
+        if (playerScore < computerScore) {
+            console.log("You Lose!")
+        }
+    } else {
+        console.log("Draw!")
+    }
 }
 
 game();
