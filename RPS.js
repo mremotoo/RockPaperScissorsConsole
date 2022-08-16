@@ -80,26 +80,50 @@ function gameWinner(computerScore, playerScore) {
     }
 }
 
-function game() {
-    
-    let playerSelection;
-    let computerSelection;
-    let gameRound;
-    for (let i = 0; i < 5; i++) {
-        playerSelection = getPlayerChoice();
-        if (playerSelection != "") {
-            computerSelection = getComputerChoice();
-            gameRound = playRound(playerSelection, computerSelection);
-            roundWinner(gameRound);
-            
-        } else {
-            console.log("No choice selected.");
-            playerSelection = getPlayerChoice();
-        }
-    }    
-    gameWinner(computerScore, playerScore);
+//trial function after clicking buttons except clear
+function trialFunction(e) {
+    console.log(e.target.className)
 }
 
-let playerScore = 0;
-let computerScore = 0;
-game();
+// clear button function
+function clearSelection(e) {
+    console.clear()
+}
+
+// Buttons EventListeners
+const rockBtn = document.querySelector('button[class = "rock"]')
+rockBtn.addEventListener('click', trialFunction)
+
+const paperBtn = document.querySelector('button[class = "paper"]')
+paperBtn.addEventListener('click', trialFunction)
+
+const scissorsBtn = document.querySelector('button[class = "scissors"]')
+scissorsBtn.addEventListener('click', trialFunction)
+
+const clearBtn = document.querySelector('button[class = "clear"]')
+clearBtn.addEventListener('click', clearSelection)
+
+
+// function game() {
+    
+//     let playerSelection;
+//     let computerSelection;
+//     let gameRound;
+//     for (let i = 0; i < 5; i++) {
+//         playerSelection = getPlayerChoice();
+//         if (playerSelection != "") {
+//             computerSelection = getComputerChoice();
+//             gameRound = playRound(playerSelection, computerSelection);
+//             roundWinner(gameRound);
+            
+//         } else {
+//             console.log("No choice selected.");
+//             playerSelection = getPlayerChoice();
+//         }
+//     }    
+//     gameWinner(computerScore, playerScore);
+// }
+
+// let playerScore = 0;
+// let computerScore = 0;
+// game();
